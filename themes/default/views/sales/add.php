@@ -773,7 +773,7 @@
 
 							<div class="col-sm-4">
 								<div class="form-group">
-									<?= lang("shipping", "slshipping"); ?>
+									<?= lang("shipping(%)", "slshipping"); ?>
 									<?php echo form_input('shipping', '', 'class="form-control input-tip" id="slshipping"'); ?>
 
 								</div>

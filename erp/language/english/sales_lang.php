@@ -448,4 +448,5 @@ $lang['order_discount_percent']			    = "Order Discount (%)";
 $lang['print_sale_order']			        = "Print Sale Order";
 $lang['contact'] = "Contact";
 $lang['quantity_in_stock_is_not_enough']    = "Quanity in stock is not enought";
-$lang['shipping']    = "Shipping(%)";
+$lang['shipping']                           = "Shipping";
+$lang['shipping(%)']                        = "Shipping (%)";

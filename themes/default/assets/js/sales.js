@@ -2463,7 +2463,7 @@ function loadItems() {
 		if (site.settings.tax2 != 0) {
 			$('#ttax2').text(formatMoney(invoice_tax));
 		}
-		$('#tship').text(formatMoney(shipping));
+		$('#tship').text(formatMoney(shipping*total/100));
 		$('#gtotal').text(formatMoney(gtotal));
 		var pas = $('#slpayment_status').val();
 		if(pas == 'paid'){
