@@ -1,0 +1,9 @@
+﻿"Product Code","Product Name",Variant,Expected,Counted
+01@,beiler,,0.0000,
+12@,ffff,,0.0000,
+RW-001@,Suger,,,
+RW-003@,Powder,Box,3,
+RW-003@,Powder,Case,,
+RW-004@,Milk,Box,3,
+RW-004@,Milk,Case,2,
+RW-005@,eggs,,16.0000,

@@ -1,0 +1,69 @@
+﻿Code,Name,Name KH,Category Code,Unit ID,Cost,Price,Alert Quantity, Tax Rate Name,Tax Method,Subcategory Code,Product Variants Separated by |,Supplier1(No),Supplier2(No),Supplier3(No),Supplier4(No),Supplier5(No),Custom Field 1,Custom Field 2,Custom Field 3,Custom Field 4,Custom Field 5,Custom Field 6,Image,Type(standard or service)
+8852023664248,koh-kae Coconut 230g,សណ្តែកដីរសជាតិដូង 230g,Peanuts Coconut,2,1.56,1.75,, No Tax, exclusive,,Can=1_1.75|Carton=24_42,,,,,,,,,,,,no_image.png,standard
+8852023664224,koh-kae Coconut 110g,សណ្តែកដីរសជាតិដូង 110g,Peanuts Coconut,2,0.84,0.86,, No Tax, exclusive,,Can=1_0.86|Carton=48_41,,,,,,,,,,,,no_image.png,standard
+8852023664507,koh-kae Coconut 75g,សណ្តែកដីរសជាតិដូង 75g,Peanuts Coconut,1,0.54,0.64,, No Tax, exclusive,,Pack=1_0.64|Carton=36_23,,,,,,,,,,,,no_image.png,standard
+8852023664361,koh-kae Coconut 35g,សណ្តែកដីរសជាតិដូង 35g,Peanuts Coconut,1,0.21875,0.25,, No Tax, exclusive,,Pack=1_0.25|Carton=72_18,,,,,,,,,,,,no_image.png,standard
+8852023664200,koh-kae Coconut 17g,សណ្តែកដីរសជាតិដូង 17g,Peanuts Coconut,1,0.109375,0.125,, No Tax, exclusive,,Pack=1_0.125|Carton=144_18,,,,,,,,,,,,no_image.png,standard
+8852023007007,koh-kae Coconut 180g,សណ្តែកដីរសជាតិដូង 180g,Peanuts Coconut,1,0.984375,1.21,, No Tax, exclusive,,Pack=1_1.21|Carton=24_29,,,,,,,,,,,,no_image.png,standard
+8852023665399,koh-kae Chicken 230g,សណ្តែកដីរសជាតិសាច់មាន់ 230g,Peanuts Chicken,2,1.56,1.72,, No Tax, exclusive,,Can=1_1.72|Carton=24_42,,,,,,,,,,,,no_image.png,standard
+8852023665887,koh-kae Chicken 105g,សណ្តែកដីរសជាតិសាច់មាន់ 105g,Peanuts Chicken,2,0.84,0.86,, No Tax, exclusive,,Can=1_0.86|Carton=48_41,,,,,,,,,,,,no_image.png,standard
+8852023665382,koh-kae Chicken 75g,សណ្តែកដីរសជាតិសាច់មាន់ 75g,Peanuts Chicken,1,0.54,0.64,, No Tax, exclusive,,Pack=1_0.64|Carton=36_23,,,,,,,,,,,,no_image.png,standard
+8852023665283,koh-kae Chicken 35g,សណ្តែកដីរសជាតិសាច់មាន់ 35g,Peanuts Chicken,1,0.21875,0.25,, No Tax, exclusive,,Pack=1_0.25|Carton=72_18,,,,,,,,,,,,no_image.png,standard
+8852023665276,koh-kae Chicken 17g,សណ្តែកដីរសជាតិសាច់មាន់ 17g,Peanuts Chicken,1,0.109375,0.125,, No Tax, exclusive,,Pack=1_0.125|Carton=144_18,,,,,,,,,,,,no_image.png,standard
+8852023006925,koh-kae Chicken 180g,សណ្តែកដីរសជាតិសាច់មាន់ 180g,Peanuts Chicken,1,0.984375,1.21,, No Tax, exclusive,,Pack=1_1.21|Carton=24_29,,,,,,,,,,,,no_image.png,standard
+8852023665481,koh-kae Shrimp 230g,សណ្តែកដីរសជាតិបង្គា 230g,Peanuts Shrimp,2,1.56,1.72,, No Tax, exclusive,,Can=1_1.72|Carton=24_42,,,,,,,,,,,,no_image.png,standard
+8852023665870,koh-kae Shrimp 105g,សណ្តែកដីរសជាតិបង្គា 105g,Peanuts Shrimp,2,0.84,0.86,, No Tax, exclusive,,Can=1_0.86|Carton=48_41,,,,,,,,,,,,no_image.png,standard
+8852023664194,koh-kae Shrimp 75g,សណ្តែកដីរសជាតិបង្គា 75g,Peanuts Shrimp,1,0.54,0.64,, No Tax, exclusive,,Pack=1_0.64|Carton=36_23,,,,,,,,,,,,no_image.png,standard
+8852023665467,koh-kae Shrimp 35g,សណ្តែកដីរសជាតិបង្គា 35g,Peanuts Shrimp,1,0.21875,0.25,, No Tax, exclusive,,Pack=1_0.25|Carton=72_18,,,,,,,,,,,,no_image.png,standard
+8852023665238,koh-kae Shrimp 17g,សណ្តែកដីរសជាតិបង្គា 17g,Peanuts Shrimp,1,0.109375,0.125,, No Tax, exclusive,,Pack=1_0.125|Carton=144_18,,,,,,,,,,,,no_image.png,standard
+8852023006932,koh-kae Shrimp 180g,សណ្តែកដីរសជាតិបង្គា 180g,Peanuts Shrimp,1,0.984375,1.21,, No Tax, exclusive,,Pack=1_1.21|Carton=24_29,,,,,,,,,,,,no_image.png,standard
+8852023665511,koh-kae BBQ 230g,សណ្តែកដីរសជាតិសាច់អាំង 230g,Peanuts BBQ,2,1.56,1.75,, No Tax, exclusive,,Can=1_1.75|Carton=24_42,,,,,,,,,,,,no_image.png,standard
+8852023665948,koh-kae BBQ 105g,សណ្តែកដីរសជាតិសាច់អាំង 105g,Peanuts BBQ,2,0.84,0.86,, No Tax, exclusive,,Can=1_0.86|Carton=48_41,,,,,,,,,,,,no_image.png,standard
+8852023004556,koh-kae BBQ 75g,សណ្តែកដីរសជាតិសាច់អាំង 75g,Peanuts BBQ,1,0.54,0.64,, No Tax, exclusive,,Pack=1_0.64|Carton=36_23,,,,,,,,,,,,no_image.png,standard
+8852023665504,koh-kae BBQ 35g,សណ្តែកដីរសជាតិសាច់អាំង 35g,Peanuts BBQ,1,0.21875,0.25,, No Tax, exclusive,,Pack=1_0.25|Carton=72_18,,,,,,,,,,,,no_image.png,standard
+8852023665498,koh-kae BBQ 17g,សណ្តែកដីរសជាតិសាច់អាំង 17g,Peanuts BBQ,1,0.109375,0.125,, No Tax, exclusive,,Pack=1_0.125|Carton=144_18,,,,,,,,,,,,no_image.png,standard
+8852023006918,koh-kae BBQ 180g,សណ្តែកដីរសជាតិសាច់អាំង 180g,Peanuts BBQ,1,0.984375,1.21,, No Tax, exclusive,,Pack=1_1.21|Carton=24_29,,,,,,,,,,,,no_image.png,standard
+8852023664255,koh-kae Coffee 230g,សណ្តែកដីរសជាតិកាហ្វេ 230g,Peanuts Coffee,2,1.56,1.72,, No Tax, exclusive,,Can=1_1.72|Carton=24_42,,,,,,,,,,,,no_image.png,standard
+8852023664231,koh-kae Coffee 110g,សណ្តែកដីរសជាតិកាហ្វេ 110g,Peanuts Coffee,2,0.84,0.86,, No Tax, exclusive,,Can=1_0.86|Carton=48_41,,,,,,,,,,,,no_image.png,standard
+8852023664514,koh-kae Coffee 75g,សណ្តែកដីរសជាតិកាហ្វេ 75g,Peanuts Coffee,1,0.54,0.64,, No Tax, exclusive,,Pack=1_0.64|Carton=36_23,,,,,,,,,,,,no_image.png,standard
+8852023664378,koh-kae Coffee 35g,សណ្តែកដីរសជាតិកាហ្វេ 35g,Peanuts Coffee,1,0.21875,0.25,, No Tax, exclusive,,Pack=1_0.25|Carton=72_18,,,,,,,,,,,,no_image.png,standard
+8852023664217,koh-kae Coffee 17g,សណ្តែកដីរសជាតិកាហ្វេ 17g,Peanuts Coffee,1,0.109375,0.125,, No Tax, exclusive,,Pack=1_0.125|Carton=144_18,,,,,,,,,,,,no_image.png,standard
+8852023006901,koh-kae Coffee 180g,សណ្តែកដីរសជាតិកាហ្វេ 180g,Peanuts Coffee,1,0.4921875,1.21,, No Tax, exclusive,,Pack=1_1.21|Carton=24_29,,,,,,,,,,,,no_image.png,standard
+8852023666549,koh-kae Tom Yum 230g,សណ្តែកដីរសជាតិតុងយុំាង 230g,Peanuts Tom Yum,2,1.56,1.75,, No Tax, exclusive,,Can=1_1.75|Carton=24_42,,,,,,,,,,,,no_image.png,standard
+8852023004440,koh-kae Tom Yum 105g,សណ្តែកដីរសជាតិតុងយុំាង 105g,Peanuts Tom Yum,2,0.84,0.86,, No Tax, exclusive,,Can=1_0.86|Carton=48_41,,,,,,,,,,,,no_image.png,standard
+8852023006956,koh-kae Tom Yum 180g,សណ្តែកដីរសជាតិតុងយុំាង 180g,Peanuts Tom Yum,1,0.4921875,1.21,, No Tax, exclusive,,Pack=1_1.21|Carton=24_29,,,,,,,,,,,,no_image.png,standard
+8852023006468,koh-kae Curry 230g,សណ្តែកដីរសជាតិការី 230g,Peanuts Curry,2,1.56,1.75,, No Tax, exclusive,,Can=1_1.75|Carton=24_42,,,,,,,,,,,,no_image.png,standard
+8852023006864,koh-kae Chilli 230g,សណ្តែកដីរសជាតិ​​ ម្ទេស 230g,Peanuts Chilli,2,1.56,1.75,, No Tax, exclusive,,Can=1_1.75|Carton=24_42,,,,,,,,,,,,no_image.png,standard
+8852023664101,koh-kae Wasabi 230g,សណ្តែកដីរសជាតិ​​ Wasabi 230g,Peanuts Wasabi,2,1.56,1.75,, No Tax, exclusive,,Can=1_1.75|Carton=24_42,,,,,,,,,,,,no_image.png,standard
+8852023665993,koh-kae Peanuts 140g,សណ្តែកដីរសជាតិ​​ អំបិល 140g,Salted Peanuts ,2,1.23046875,1.33,, No Tax, exclusive,,Can=1_1.33|Carton=24_32,,,,,,,,,,,,no_image.png,standard
+8852023665962,k.k Peanuts Honey 140g,សណ្តែកដីរសជាតិ​​ ទឹកឃ្មុំ 140g,Peanuts Honey,2,1.23046875,1.33,, No Tax, exclusive,,Can=1_1.33|Carton=24_32,,,,,,,,,,,,no_image.png,standard
+8852023003917,koh-kae Peanuts 160g,សណ្តែកដីរសជាតិ​​ អំបិល 160g,Salted Peanuts ,1,1.06640625,1.17,, No Tax, exclusive,,Pack=1_1.17|Carton=24_28,,,,,,,,,,,,no_image.png,standard
+8852023003672,k.k Greenpeas 180g,សណ្តែកខៀវដោះគោ 180g,Greenpeas,2,1.52578125,1.72,, No Tax, exclusive,,Can=1_1.72|Carton=24_42,,,,,,,,,,,,no_image.png,standard
+8852023009032,k.k Greenpeas 85g,សណ្តែកខៀវដោះគោ 85g,Greenpeas,1,0.7,0.81,, No Tax, exclusive,,Pack=1_0.81|Carton=36_29,,,,,,,,,,,,no_image.png,standard
+8852023008936,k.k Greenpeas Chilli 180g,សណ្តែកខៀវរសជាតិម្ទេស 180g,Greenpeas Chilli,2,1.52578125,1.72,, No Tax, exclusive,,Can=1_1.72|Carton=24_42,,,,,,,,,,,,no_image.png,standard
+8852023009056,k.k Greenpeas Chilli 85g,សណ្តែកខៀវរសជាតិម្ទេស 85g,Greenpeas Chilli,1,0.7,0.81,, No Tax, exclusive,,Pack=1_0.81|Carton=36_29,,,,,,,,,,,,no_image.png,standard
+8852023008950,k.kGreenpeasSquid 180g,សណ្តែកខៀវរសជាតិមឹក 180g,Greenpeas Squid,2,1.52578125,1.72,, No Tax, exclusive,,Can=1_1.72|Carton=24_42,,,,,,,,,,,,no_image.png,standard
+8852023009063,k.kGreenpeasSquid 85g,សណ្តែកខៀវរសជាតិមឹក 85g,Greenpeas Squid,1,0.7,0.81,, No Tax, exclusive,,Pack=1_0.81|Carton=36_29,,,,,,,,,,,,no_image.png,standard
+8852023664613,k.kCashewNutsHoney 130g,ចាន់ទីរស់ជាតិទឺក់ឃ្មុំ 130g,CashewNutsHoney,2,2.625,2.84,, No Tax, exclusive,,Can=1_2.84|Carton=24_68,,,,,,,,,,,,no_image.png,standard
+8852023664668,k.kCashewNuts 130g,ចាន់ទីរស់ជាតិប្រៃ 130g,CashewNuts,2,2.38,2.42,, No Tax, exclusive,,Can=1_2.42|Carton=24_58,,,,,,,,,,,,no_image.png,standard
+8852023664675,k.kCashewNuts 30g,ចាន់ទីរស់ជាតិប្រៃ 30g,CashewNuts,1,0.62,0.75,, No Tax, exclusive,,Pack=1_0.75|Carton=48_36,,,,,,,,,,,,no_image.png,standard
+8852023003856,k.kCashewNuts 160g,ចាន់ទីរស់ជាតិប្រៃ 160g,CashewNuts,1,2.87109375,3.05,, No Tax, exclusive,,Pack=1_3.05|Carton=24_73,,,,,,,,,,,,no_image.png,standard
+8852023003283,k.k Almonds 130g,គ្រាប់អាល់ម៉ុង 130g,Almonds,2,2.21,2.46,, No Tax, exclusive,,Can=1_2.46|Carton=24_59,,,,,,,,,,,,no_image.png,standard
+8852023664651,k.k Almonds 28g,គ្រាប់អាល់ម៉ុង 28g,Almonds,1,0.615234375,0.75,, No Tax, exclusive,,Pack=1_0.75|Carton=24_36,,,,,,,,,,,,no_image.png,standard
+8852023006628,k.k Almonds 160g,គ្រាប់អាល់ម៉ុង 160g,Almonds,1,2.87109375,3.05,, No Tax, exclusive,,Pack=1_3.05|Carton=24_73,,,,,,,,,,,,no_image.png,standard
+8852023003290,K.k Pistachios 130g,គ្រាប់រីករាយ 130g,Pistachios,2,2.8,2.92,, No Tax, exclusive,,Can=1_2.92|Carton=24_70,,,,,,,,,,,,no_image.png,standard
+8852023664170,K.k Pistachios 35g,គ្រាប់រីករាយ 35g,Pistachios,1,0.762890625,0.84,, No Tax, exclusive,,Pack=1_0.84|Carton=48_40,,,,,,,,,,,,no_image.png,standard
+8852023006871,k.kThainSpicyMixed 110g,រសជាតិហឺរបែបថៃ 110g,ThainSpicyMixed,2,2,2.13,, No Tax, exclusive,,Can=1_2.13|Carton=24_51,,,,,,,,,,,,no_image.png,standard
+8852023006574,k.kThainSpicyMixed 30g,រសជាតិហឺរបែបថៃ 30g,ThainSpicyMixed,1,0.73828125,0.75,, No Tax, exclusive,,Pack=1_0.75|Carton=48_36,,,,,,,,,,,,no_image.png,standard
+8852023006635,k.kThainSpicyMixed 145g,រសជាតិហឺរបែបថៃ 145g,ThainSpicyMixed,1,3.03515625,3.05,, No Tax, exclusive,,Pack=1_3.05|Carton=24_73,,,,,,,,,,,,no_image.png,standard
+8852023009421,NUT NATUR SEASALT 35g,គ្រាប់អាល់ម៉ុងពិសេស 35g,NUT NATURAlmonds,1,0.779296875,0.85,, No Tax, exclusive,,Pack=1_0.85|Carton=48_41,,,,,,,,,,,,no_image.png,standard
+8852023009438,NUT NATURRoasted 35g,គ្រាប់អាល់ម៉ុងលីងពិសេស 35g,NUT NATURAlmonds,1,0.779296875,0.85,, No Tax, exclusive,,Pack=1_0.85|Carton=48_41,,,,,,,,,,,,no_image.png,standard
+8852023009445,NUT NATURcarnberry 30g,គ្រាប់អាល់ម៉ុងជូអែមពិសេស 30g,NUT NATURAlmonds,1,0.779296875,0.85,, No Tax, exclusive,,Pack=1_0.85|Carton=48_41,,,,,,,,,,,,no_image.png,standard
+8852023009452,NUT NATUPistachio 32g,គ្រាប់រីករាយរស់ជាតិធម្មជាតិ 32g,NUT NATUPistachio,1,0.779296875,0.85,, No Tax, exclusive,,Pack=1_0.85|Carton=48_41,,,,,,,,,,,,no_image.png,standard
+8852023005980,KK Salted Peanuts 90g,សណ្តែកដីកពា្ចប់ រសជាតិប្រៃ 90g,Salted Peanuts ,1,0.45,0.64,, No Tax, exclusive,,Pack=1_0.64|Carton=36_23,,,,,,,,,,,,no_image.png,standard
+8852023666136,KK Salted Peanuts 42g,សណ្តែកដីកពា្ចប់ រសជាតិប្រៃ 42g,Salted Peanuts ,1,0.45,0.25,, No Tax, exclusive,,Pack=1_0.25|Carton=36_18,,,,,,,,,,,,no_image.png,standard
+8852023666273,KK Salted Peanuts 20g,សណ្តែកដីកពា្ចប់ រសជាតិប្រៃ 20g,Salted Peanuts ,1,0.129882813,0.125,, No Tax, exclusive,,Pack=1_0.125|Carton=144_18,,,,,,,,,,,,no_image.png,standard
+8852023004204,KK Salted Green PeasSALTED 35g,សណ្តែកហោឡាំងតៅ​រសជាតិទឹកដោះគោ 35g,Greenpeas,1,0.22,0.25,, No Tax, exclusive,,Pack=1_0.25|Carton=72_18,,,,,,,,,,,,no_image.png,standard
+8852023004198,KK Salted Green PeasSALTED 20g,សណ្តែកហោឡាំងតៅ​រសជាតិទឹកដោះគោ 20g,Greenpeas,1,0.12,0.125,, No Tax, exclusive,,Pack=1_0.125|Carton=144_18,,,,,,,,,,,,no_image.png,standard
+8852023009384,Salt greenpeas (Pack) 23gX144,សណ្តែកបាយរសជាតិធម្មតា,Greenpeas,1,0.109375,0.125,, No Tax, exclusive,,Pack=1_0.125|Carton=144_18,,,,,,,,,,,,no_image.png,standard
+8852023666655,koh-kae wasabi 105g,សណ្តែកដីរសជាតិ​​ Wasabi 105g,Peanuts Wasabi,2,0.84,0.86,, No Tax, exclusive,,Can=1_0.86|Carton=48_41,,,,,,,,,,,,no_image.png,standard
