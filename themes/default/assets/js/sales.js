@@ -843,16 +843,29 @@ var old_shipping;
 $('#slshipping').focus(function () {
 	old_shipping = $(this).val();
 }).change(function () {
-	if (!is_numeric($(this).val())) {
+	/*if (!is_numeric($(this).val())) {
 		$(this).val(old_shipping);
 		//bootbox.alert(lang.unexpected_value);
 		//old_shipping = $(this).val(0);
 		return;
 	} else {
 		shipping = $(this).val() ? parseFloat($(this).val()) : '0';
+	}*/
+	var shippingvalue=$(this).val();
+	if(shippingvalue.indexOf("%")!==-1){
+		var ship=shippingvalue.split("%");
+		if (!isNaN(ship[0])) {
+			shipping=parseFloat(total*ship[0]/100);
+		}else{
+			shipping=0;
+		}
+	}else{
+		shipping=shippingvalue;
 	}
+
+
 	__setItem('slshipping', shipping);
-	var gtotal = ((total + invoice_tax) - order_discount) + shipping;
+	var gtotal = ((total + invoice_tax) - order_discount) - shipping;
 	$('#gtotal').text(formatMoney(gtotal));
 	$('#tship').text(formatMoney(shipping));
 	loadItems();
@@ -2453,7 +2466,7 @@ function loadItems() {
 		
 		// Totals calculations after item addition
 		
-		var gtotal = parseFloat(((total - formatDecimal(order_discount)) - (shipping*total/100)) + invoice_tax);
+		var gtotal = parseFloat(((total - formatDecimal(order_discount)) - shipping) + invoice_tax);
 		
 		$('#total').text(formatMoney(total));
 		$('#titems').text((an - 1) + ' (' + formatNumber(parseFloat(count) - 1) + ')');
@@ -2463,7 +2476,7 @@ function loadItems() {
 		if (site.settings.tax2 != 0) {
 			$('#ttax2').text(formatMoney(invoice_tax));
 		}
-		$('#tship').text(formatMoney(shipping*total/100));
+		$('#tship').text(formatDecimal(shipping));
 		$('#gtotal').text(formatMoney(gtotal));
 		var pas = $('#slpayment_status').val();
 		if(pas == 'paid'){

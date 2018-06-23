@@ -4132,7 +4132,10 @@ AND "'.$end_date.' 23:59:00"';
 					$total 		+= $subtotal;
                 }
             }
-				
+            if(strpos($shipping,"%")!=false){
+			    $ship_percent=explode("%",$shipping);
+                $shipping=$ship_percent[0]*$total/100;
+            }
             if (empty($products)) {
                 $this->form_validation->set_rules('product', lang("order_items"), 'required');
             } else {
@@ -4167,7 +4170,7 @@ AND "'.$end_date.' 23:59:00"';
             }
 			
             $total_tax = $this->erp->formatDecimal(($product_tax + $order_tax), 4); 
-            $grand_total = $this->erp->formatDecimal(($total + $order_tax + $this->erp->formatDecimal($shipping) - $order_discount), 4);
+            $grand_total = $this->erp->formatDecimal(($total + $order_tax - $this->erp->formatDecimal($shipping) - $order_discount), 4);
 	
 			$amount_limit = $this->sales_model->getAmountPaidByCustomer($customer_id);
 			$credit = (int)($amount_limit->amount) + (int)($total);
@@ -5995,7 +5998,10 @@ AND "'.$end_date.' 23:59:00"';
                     $total += $this->erp->formatDecimal($subtotal, 4);
                 }
             }
-
+            if(strpos($shipping,"%")!=false){
+                $ship_percent=explode("%",$shipping);
+                $shipping=$ship_percent[0]*$total/100;
+            }
             if (empty($products)) {
                 $this->form_validation->set_rules('product', lang("order_items"), 'required');
             } else {
@@ -6029,7 +6035,7 @@ AND "'.$end_date.' 23:59:00"';
             }
 
             $total_tax = $this->erp->formatDecimal(($product_tax + $order_tax), 4);
-            $grand_total 			= $this->erp->formatDecimal(($total + $order_tax + $this->erp->formatDecimal($shipping) - $order_discount), 4);
+            $grand_total 			= $this->erp->formatDecimal(($total + $order_tax - $this->erp->formatDecimal($shipping) - $order_discount), 4);
             $sales 					= $this->sales_model->getInvoiceByID($id);
 			$updated_count 			= $sales->updated_count + 1;
 			$data = array(
