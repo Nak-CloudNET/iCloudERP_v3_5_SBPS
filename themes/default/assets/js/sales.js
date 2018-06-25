@@ -2476,7 +2476,7 @@ function loadItems() {
 		if (site.settings.tax2 != 0) {
 			$('#ttax2').text(formatMoney(invoice_tax));
 		}
-		$('#tship').text(formatDecimal(shipping));
+		$('#tship').text(formatDecimal(shipping,4));
 		$('#gtotal').text(formatMoney(gtotal));
 		var pas = $('#slpayment_status').val();
 		if(pas == 'paid'){

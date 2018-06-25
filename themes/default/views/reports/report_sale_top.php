@@ -45,20 +45,16 @@
                 }, {"mRender": fld}, null, null, null, {"sClass": "center"}, {
                     "bSearchable": false,
                     "mRender": formatQuantity
-                }, {"mRender": decimalFormat}, {"mRender": decimalFormat}, {"mRender": decimalFormat}],
+                }],
             "fnFooterCallback": function (nRow, aaData, iStart, iEnd, aiDisplay) {
                 var gtotal = 0, paid = 0, balance = 0, qtotal = 0 ,quantity=0,cost_amount = 0,price_amount = 0,profit=0;
                 for (var i = 0; i < aaData.length; i++){ 
                     quantity += parseFloat(aaData[aiDisplay[i]][7]);
-                    cost_amount += parseFloat(aaData[aiDisplay[i]][8]);
-                    price_amount += parseFloat(aaData[aiDisplay[i]][9]);
-                    profit += parseFloat(aaData[aiDisplay[i]][10]);
+
                 }
                 var nCells = nRow.getElementsByTagName('th');  
                 nCells[7].innerHTML = formatQuantity(parseFloat(quantity));
-                nCells[8].innerHTML = formatQuantity(parseFloat(cost_amount));
-                nCells[9].innerHTML = formatQuantity(parseFloat(price_amount));
-                nCells[10].innerHTML = formatQuantity(parseFloat(profit));
+
             }
         }).fnSetFilteringDelay().dtFilter([
 		    {column_number: 2, filter_default_label: "[<?=lang('date');?> (y-m-d)]", filter_type: "text", data: []},
@@ -231,9 +227,7 @@
                             <th><?= lang("category"); ?></th>
 							<th><?= lang("unit"); ?></th> 
                             <th width="10%"><?= lang("quantity");?></th>
-                            <th width="10%"><?= lang("cost_amount");?></th>
-                            <th width="10%"><?= lang("price_amount");?></th>
-                            <th width="10%"><?= lang("profit");?></th>
+
                             
                         </tr>
                         </thead>
@@ -254,9 +248,7 @@
 							<th></th>
                             <th></th>
                             <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+
                         </tr>
                         </tfoot>
                     </table>

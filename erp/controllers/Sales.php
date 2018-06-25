@@ -4093,10 +4093,13 @@ AND "'.$end_date.' 23:59:00"';
 					}
 					//Check Product in Stock
 					$qty_in_stock=$this->products_model->getWarehouseQty($item_id,$warehouse_id);
-					if($qty_in_stock<$quantity_balance && !$this->Settings->overselling){
-                        $this->session->set_flashdata('error', $item_name.' '.lang('quantity_in_stock_is_not_enough'));
-                        redirect($_SERVER["HTTP_REFERER"]);
+					if(!$this->Settings->overselling){
+                        if($qty_in_stock->quantity<$quantity_balance){
+                            $this->session->set_flashdata('error', $item_name.' '.lang('quantity_in_stock_is_not_enough'));
+                            redirect($_SERVER["HTTP_REFERER"]);
+                        }
                     }
+
 				
                     $products[] = array(
                         'product_id' 		=> $item_id,

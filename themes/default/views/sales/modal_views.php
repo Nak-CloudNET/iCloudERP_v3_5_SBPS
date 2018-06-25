@@ -78,9 +78,6 @@
 							<th class="text-center"><?= lang("create_by"); ?></th>
                             <th class="text-center"><?= lang("unit"); ?></th>
                             <th class="text-center"><?= lang("quantity"); ?></th>
-                            <th class="text-center"><?= lang("cost"); ?></th>
-                            <th class="text-center"><?= lang("price"); ?></th>  
-							<th class="text-center"><?= lang("profit"); ?></th>  
 						</tr> 
                     </thead> 
                     <tbody> 
@@ -101,9 +98,6 @@
 							 <td class="text-center"><?= $row->name?></td>
 							 <td class="text-center"><?= $row->item_unit?></td>
                              <td class="text-center"><?= $this->erp->formatQuantity($row->quantity) ?></td>
-                             <td class="text-center"><?= $this->erp->formatMoney($row->unit_cost * $row->qty_unit*$row->quantity) ?></td>
-                             <td class="text-center"><?= $this->erp->formatMoney($row->unit_price * $row->quantity) ?></td>
-							 <td class="text-center"><?= $this->erp->formatMoney(($row->unit_price - ($row->unit_cost* $row->qty_unit)) * $row->quantity) ?></td>
                        </tr> 
 					    <?php
                             $total_qty += $row->quantity;
@@ -117,14 +111,7 @@
                         }
                         ?>
                     </tbody>
-                    <tfoot> 
-					   <tr height="30">
-							<td colspan="8" class="text-right"><b><?= lang("total")?></b></td>
-                            <td class="text-center"><b><?= $this->erp->formatMoney($total_cost) ?></b></td>
-                            <td class="text-center"><b><?= $this->erp->formatMoney($total_price) ?></b></td>
-							<td class="text-center"><b><?= $this->erp->formatMoney($profit) ?></b></td>
-					   </tr>
-                    </tfoot>
+
                 </table>
             </div>
 

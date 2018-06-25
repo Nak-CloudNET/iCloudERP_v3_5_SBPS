@@ -27376,11 +27376,8 @@ class Reports extends MY_Controller
 			sale_items.product_name, 
 			erp_categories.name as category,  
 			if(erp_sale_items.option_id, erp_units.name,erp_units.name) AS NAME,
-            SUM(COALESCE(erp_sale_items.quantity_balance,0)) as quantity,
-            IF (erp_sale_items.option_id,( (erp_sale_items.unit_cost * erp_product_variants.qty_unit) * SUM(COALESCE (erp_sale_items.quantity, 0)) ), (erp_sale_items.unit_cost * SUM(COALESCE (erp_sale_items.quantity, 0)))) AS cost_amount,
-            SUM(erp_sale_items.unit_price * (COALESCE(erp_sale_items.quantity,0))) as price_amount,
-            (SUM(erp_sale_items.unit_price * (COALESCE(erp_sale_items.quantity,0)))) - (IF (erp_sale_items.option_id,((erp_sale_items.unit_cost * erp_product_variants.qty_unit) * SUM(COALESCE (erp_sale_items.quantity, 0))),(erp_sale_items.unit_cost * SUM(COALESCE (erp_sale_items.quantity, 0)))))", FALSE )
-			->from('erp_sale_items')
+            SUM(COALESCE(erp_sale_items.quantity_balance,0)) as quantity")
+            ->from('erp_sale_items')
 			->join('erp_sales','erp_sales.id=erp_sale_items.sale_id','left')
 			->join('erp_products','erp_products.id=erp_sale_items.product_id','left')
 			->join('erp_categories','erp_categories.id=erp_products.category_id','left')
