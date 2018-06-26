@@ -195,7 +195,7 @@
                 <?php if ($inv->shipping != 0 || $inv->shipping_percent != 0) {
                     echo '<tr class="tr"><td colspan="' . $col . '" style="text-align:right;">ដឹកជញ្ចូន ' . lang("Delivery") . '</td><td style="text-align:right;">';
                     if($inv->shipping!=0){
-                        echo $inv->shipping;
+                        echo $this->erp->formatMoney($inv->shipping);
                     }
                     if($inv->shipping_percent!=0){
                         echo '<small>('.$inv->shipping_percent.'%)</small>'.$this->erp->formatMoney($inv->shipping_percent*$inv->total/100);
