@@ -25,6 +25,8 @@
         __setItem('sldiscount', '<?= $inv->order_discount_id ?>');
         __setItem('sltax2', '<?= $inv->order_tax_id ?>');
         __setItem('slshipping', '<?= $inv->shipping ?>');
+        __setItem('sltotal', '<?= $inv->total ?>');
+        __setItem('slshipping_percent', '<?= $inv->shipping_percent ?>');
         __setItem('slitems', JSON.stringify(<?= $inv_items; ?>));
 		<?php /* if (isset($payment->paid_by)) { */ ?>
 		//__setItem('paid_by_1', '<?= $payment->paid_by ?>');
@@ -468,7 +470,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <?= lang("shipping", "slshipping"); ?>
-                                <?php echo form_input('shipping', '', 'class="form-control input-tip" id="slshipping"'); ?>
+                                <?php echo form_input('shipping', $inv->shipping?$inv->shipping:($inv->shipping_percent?$inv->shipping_percent.'%':''), 'class="form-control input-tip" id="slshipping"'); ?>
 
                             </div>
                         </div>

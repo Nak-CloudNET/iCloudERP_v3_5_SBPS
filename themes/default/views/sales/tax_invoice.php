@@ -192,8 +192,15 @@
                 }
 
                 ?>
-                <?php if ($inv->shipping != 0) {
-                    echo '<tr class="tr"><td colspan="' . $col . '" style="text-align:right;">ដឹកជញ្ចូន ' . lang("Delivery Charge") . '</td><td style="text-align:right;"><small>('.$this->erp->formatDecimal($inv->shipping*100/$inv->total).'%)</small>'.  $this->erp->formatMoney($inv->shipping) . '</td></tr>';
+                <?php if ($inv->shipping != 0 || $inv->shipping_percent != 0) {
+                    echo '<tr class="tr"><td colspan="' . $col . '" style="text-align:right;">ដឹកជញ្ចូន ' . lang("Delivery") . '</td><td style="text-align:right;">';
+                    if($inv->shipping!=0){
+                        echo $inv->shipping;
+                    }
+                    if($inv->shipping_percent!=0){
+                        echo '<small>('.$inv->shipping_percent.'%)</small>'.$this->erp->formatMoney($inv->shipping_percent*$inv->total/100);
+                    }
+                    echo '</td></tr>';
                 }
                 ?>
                 <?php if ($Settings->tax2 && $inv->order_tax != 0) {

@@ -873,9 +873,14 @@ $('#slshipping').focus(function () {
 if (slshipping = __getItem('slshipping')) {
 	shipping = parseFloat(slshipping);
 	$('#slshipping').val(shipping);
-} else {
+}else if(slshipping_percent = __getItem('slshipping_percent')){
+	getTotal=__getItem('sltotal')
+    shipping = parseFloat(slshipping_percent*getTotal/100);
+
+} else{
 	shipping = 0;
 }
+
 $('#add_sale, #edit_sale').attr('disabled', true);
 $(document).on('change', '.rserial', function () {
 	var item_id = $(this).closest('tr').attr('data-item-id');
@@ -2476,7 +2481,7 @@ function loadItems() {
 		if (site.settings.tax2 != 0) {
 			$('#ttax2').text(formatMoney(invoice_tax));
 		}
-		$('#tship').text(formatDecimal(shipping,4));
+		$('#tship').text(formatNumber(shipping,3));
 		$('#gtotal').text(formatMoney(gtotal));
 		var pas = $('#slpayment_status').val();
 		if(pas == 'paid'){

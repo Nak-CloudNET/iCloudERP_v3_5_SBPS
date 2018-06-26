@@ -4136,9 +4136,16 @@ AND "'.$end_date.' 23:59:00"';
                 }
             }
             if(strpos($shipping,"%")!=false){
-			    $ship_percent=explode("%",$shipping);
-                $shipping=$ship_percent[0]*$total/100;
+                $shipping_percent=explode("%",$shipping);
+                $shipping_money=null;
+                $shipping=$shipping_percent[0]*$total/100;
+                //$shipping=$ship_percent[0]*$total/100;
+            }else{
+                $shipping_money=$shipping;
+                $shipping=$shipping_money;
+                $shipping_percent=null;
             }
+            //$this->erp->print_arrays($shipping,'Percent',$shipping_percent);
             if (empty($products)) {
                 $this->form_validation->set_rules('product', lang("order_items"), 'required');
             } else {
@@ -4212,7 +4219,8 @@ AND "'.$end_date.' 23:59:00"';
                 'order_tax_id' 			=> $order_tax_id,
                 'order_tax' 			=> $order_tax,
                 'total_tax' 			=> $total_tax,
-                'shipping' 				=> $this->erp->formatDecimal($shipping),
+                'shipping' 				=> $this->erp->formatDecimal($shipping_money),
+                'shipping_percent' 		=> $this->erp->formatDecimal($shipping_percent[0]),
                 'grand_total' 			=> $grand_total,
                 'total_items' 			=> $total_items,
                 'sale_status' 			=> $sale_status,
@@ -6002,8 +6010,14 @@ AND "'.$end_date.' 23:59:00"';
                 }
             }
             if(strpos($shipping,"%")!=false){
-                $ship_percent=explode("%",$shipping);
-                $shipping=$ship_percent[0]*$total/100;
+                $shipping_percent=explode("%",$shipping);
+                $shipping_money=null;
+                $shipping=$shipping_percent[0]*$total/100;
+                //$shipping=$ship_percent[0]*$total/100;
+            }else{
+                $shipping_money=$shipping;
+                $shipping=$shipping_money;
+                $shipping_percent=null;
             }
             if (empty($products)) {
                 $this->form_validation->set_rules('product', lang("order_items"), 'required');
@@ -6061,7 +6075,8 @@ AND "'.$end_date.' 23:59:00"';
                 'order_tax_id' 			=> $order_tax_id,
                 'order_tax' 			=> $order_tax,
                 'total_tax' 			=> $total_tax,
-                'shipping' 				=> $this->erp->formatDecimal($shipping),
+                'shipping' 				=> $this->erp->formatDecimal($shipping_money),
+                'shipping_percent' 		=> $this->erp->formatDecimal($shipping_percent[0]),
                 'grand_total' 			=> $grand_total,
                 'total_items' 			=> $total_items,
                 'sale_status' 			=> $sale_status,
