@@ -720,7 +720,7 @@
         }
         slshipping = parseFloat(shipping);
         __setItem('slshipping', shipping);
-        $('#tship').text(shipping);
+        $('#tship').text(formatNumber(shipping,3));
 		$("#reref").attr('readonly', true);
 		$('#ref_st').on('ifChanged', function() {
 		  if ($(this).is(':checked')) {
