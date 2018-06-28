@@ -283,8 +283,17 @@
                         echo '<tr><td></td><td colspan="' . $col . '" style="text-align:right; padding-right:10px;">' . lang("order_tax") . ' (' . $default_currency->code . ')</td><td style="text-align:right; padding-right:10px;">' . $this->erp->formatMoney($inv->order_tax) . '</td></tr>';
                     }
                     ?>
-                    <?php if ($inv->shipping != 0) {
-                        echo '<tr><td></td><td colspan="' . $col . '" style="text-align:right; padding-right:10px;;">' . lang("shipping") . ' (' . $default_currency->code . ')</td><td style="text-align:right; padding-right:10px;">' . $this->erp->formatMoney($inv->shipping) . '</td></tr>';
+                    <?php if ($inv->shipping != 0 || $inv->shipping_percent!=0) {
+                        echo '<tr><td></td><td colspan="' . $col . '" style="text-align:right; padding-right:10px;">' . lang("shipping") . ' (' . $default_currency->code . ')</td><td style="text-align:right; padding-right:10px;">';
+                           if($inv->shipping!=0)
+                           {
+                               echo $this->erp->formatMoney($inv->shipping);
+                           }
+                           if($inv->shipping_percent!=0)
+                           {
+                               echo '<small>('.$this->erp->formatDecimal($inv->shipping_percent,2).'%)</small> '.$this->erp->formatMoney($inv->shipping_percent*$inv->total/100);
+                           }
+                        echo '</td></tr>';
                     }
                     ?>
 					
