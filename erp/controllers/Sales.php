@@ -6641,6 +6641,16 @@ AND "'.$end_date.' 23:59:00"';
             } else {
                 $order_tax_id = null;
             }
+            if(strpos($shipping,"%")!=false){
+                $shipping_percent=explode("%",$shipping);
+                $shipping_money=null;
+                $shipping=$shipping_percent[0]*$total/100;
+                //$shipping=$ship_percent[0]*$total/100;
+            }else{
+                $shipping_money=$shipping;
+                $shipping=$shipping_money;
+                $shipping_percent=null;
+            }
 
             $total_tax = $this->erp->formatDecimal($product_tax + $order_tax);
             //$grand_total = $this->erp->formatDecimal($paid_amount);
@@ -6664,7 +6674,8 @@ AND "'.$end_date.' 23:59:00"';
                 'order_tax_id' 		=> $order_tax_id,
                 'order_tax' 		=> $order_tax,
                 'total_tax' 		=> $total_tax,
-				'shipping' 			=> $shipping,
+                'shipping' 			=> $this->erp->formatDecimal($shipping_money),
+                'shipping_percent' 	=> $this->erp->formatDecimal($shipping_percent[0]),
                 'surcharge' 		=> $this->erp->formatDecimal($return_surcharge),
                 'grand_total' 		=> $this->erp->formatDecimal($grand_total),
 				'paid' 				=> $this->erp->formatDecimal($this->input->post('amount-paid')),

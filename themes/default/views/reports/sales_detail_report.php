@@ -410,7 +410,7 @@
                                             }
 											//$this->erp->print_arrays( $sale_detail->unit_cost);
 											$gross_margin = ($sale_detail->subtotal - $sale_detail->item_tax) - $total_cost;
-											$sub_total = ($total_amount - $sale->order_discount) + $sale->order_tax + $total_item_tax + $sale->shipping;
+											$sub_total = ($total_amount - $sale->order_discount) + $sale->order_tax + $total_item_tax - $sale->shipping;
 
 											$total_discount += $sale_detail->item_discount;
 											$total_quantity += $sale_detail->quantity;
@@ -419,7 +419,7 @@
 											$total_amount += $sale_detail->subtotal - $sale_detail->item_tax;
 											$total_amounts += $sale_detail->subtotal - $sale_detail->item_tax;
 											$total_item_tax += $sale_detail->item_tax; 
-										    $amount = $total_amount- $sale->order_discount + $sale->shipping;
+										    $amount = $total_amount- $sale->order_discount - $sale->shipping;
 											//$amounts +=	$amount;
 
 								?>
@@ -484,7 +484,7 @@
 										foreach($sales_by_gls->result() as $sales_by_gl){
 											$e_total += $sales_by_gl->amount;
 											$e_amount = $this->erp->formatMoney($sales_by_gl->amount);
-											$d_gross_margin = ($total_gross_margin - $sale->order_discount + $sale->shipping) + (-1)* $e_total;
+											$d_gross_margin = ($total_gross_margin - $sale->order_discount - $sale->shipping) + (-1)* $e_total;
 											$e_sub_total = "(".$this->erp->formatMoney(abs($e_total)).")";
 											
 											
@@ -529,7 +529,7 @@
                                             }
 																						
 											$gross_margin = ($sale_detail_returned->subtotal - $sale_detail_returned->item_tax) - $total_cost;
-											$sub_total = ($total_amount - $sale->order_discount) + $sale->order_tax + $total_item_tax + $sale->shipping;
+											$sub_total = ($total_amount - $sale->order_discount) + $sale->order_tax + $total_item_tax - $sale->shipping;
 											
 											$total_discount += $sale_detail_returned->item_discount;
 											$total_quantity += $sale_detail_returned->quantity;
@@ -537,7 +537,7 @@
 											$total_gross_margin += $gross_margin;
 											$total_amount += $sale_detail_returned->subtotal - $sale_detail_returned->item_tax;
 											$total_item_tax += $sale_detail_returned->item_tax;
-										    $amount = $total_amount- $sale->order_discount + $sale->shipping;
+										    $amount = $total_amount- $sale->order_discount - $sale->shipping;
 											$amounts +=	$amount; 
 									?>
                                             <tr>
@@ -617,7 +617,7 @@
                                     <?php } ?>
 									<td class="right"><?= $this->erp->formatMoney($sale->shipping); ?></td>
                                     <?php if ($Owner || $Admin || $GP['products-cost']) { ?>
-                                        <td class="right"><?= $this->erp->formatMoney($sale->shipping); ?></td>
+                                        <td class="right"><?php if($sale->shipping_percent){echo '<small>('.$sale->shipping_percent.'%)</small>';} ?><?= $this->erp->formatMoney($sale->shipping); ?></td>
                                     <?php } ?>
 								</tr>
                                     <tr style="font-weight:bold;">
@@ -676,7 +676,7 @@
 									$g_gross_margin = ($g_amounts) - $g_total_costs ;
 									$g_total_shipping += $sale->shipping;
 									$g_total_tax += $sale->order_tax + $total_item_tax;								
-									$g_totals = ($g_amounts + $g_total_shipping + $g_total_tax) - $g_order_discounts; 
+									$g_totals = ($g_amounts - $g_total_shipping + $g_total_tax) - $g_order_discounts;
 								} 
 								 
 							}else{ ?>
@@ -744,10 +744,10 @@
                                         style="color:#0586ff"><?= $this->erp->formatMoney($g_total_costs); ?></th>
                                 <?php } ?>
                                 <th class="right"
-                                    style="color:#0586ff"><?= $this->erp->formatMoney($g_amounts - $g_order_discounts + $g_total_shipping); ?></th>
+                                    style="color:#0586ff"><?= $this->erp->formatMoney($g_amounts - $g_order_discounts - $g_total_shipping); ?></th>
                                 <?php if ($Owner || $Admin || $GP['products-cost']) { ?>
                                     <th class="right"
-                                        style="color:#0586ff"><?= $this->erp->formatMoney($g_amounts - $g_total_costs - $g_order_discounts + $g_total_shipping); ?></th>
+                                        style="color:#0586ff"><?= $this->erp->formatMoney($g_amounts - $g_total_costs - $g_order_discounts - $g_total_shipping); ?></th>
                                 <?php } ?>
                             </tr>
 

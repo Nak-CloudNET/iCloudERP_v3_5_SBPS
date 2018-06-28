@@ -33,6 +33,7 @@
         __setItem('rediscount', '<?= $inv->order_discount_id ?>');
 		__setItem('sldiscount', '<?= $inv->order_discount_id ?>');
 		__setItem('slshipping', '<?= $inv->shipping ?>');
+        __setItem('slshipping_percent', '<?= $inv->shipping_percent ?>');
         __setItem('retax2', '<?= $inv->order_tax_id ?>');
         __setItem('return_surcharge', '0');
         <?php } ?>
@@ -382,14 +383,19 @@
         $(document).on("focus", '#slshipping', function () {
             old_shipping = $(this).val() ? $(this).val() : '0';
         }).on("change", '#slshipping', function () {
-            var new_shipping = $(this).val() ? $(this).val() : '0';
-            if (!is_valid_discount(new_shipping)) {
-                $(this).val(new_shipping);
-                bootbox.alert('<?= lang('unexpected_value'); ?>');
-                return;
+            var shippingvalue=$(this).val();
+            if(shippingvalue.indexOf("%")!==-1){
+                var ship=shippingvalue.split("%");
+                if (!isNaN(ship[0])) {
+                    shipping=parseFloat(total*ship[0]/100);
+                }else{
+                    shipping=0;
+                }
+            }else{
+                shipping=shippingvalue;
             }
-			slshipping = parseFloat(new_shipping);
-            __setItem('slshipping', new_shipping);
+			slshipping = parseFloat(shipping);
+            __setItem('slshipping', shipping);
             loadItems();
         });
 		$('#sltax2').on('change', function() {
@@ -701,6 +707,20 @@
     }
 	
 	$(document).ready(function() {
+        var shippingvalue=$('#slshipping').val();
+        if(shippingvalue.indexOf("%")!==-1){
+            var ship=shippingvalue.split("%");
+            if (!isNaN(ship[0])) {
+                shipping=parseFloat(total*ship[0]/100);
+            }else{
+                shipping=0;
+            }
+        }else{
+            shipping=shippingvalue;
+        }
+        slshipping = parseFloat(shipping);
+        __setItem('slshipping', shipping);
+        $('#tship').text(shipping);
 		$("#reref").attr('readonly', true);
 		$('#ref_st').on('ifChanged', function() {
 		  if ($(this).is(':checked')) {
@@ -975,7 +995,7 @@
 								<div class="col-sm-4">
 									<div class="form-group">
 										<?= lang("shipping", "slshipping"); ?>
-										<?php echo form_input('shipping', '', 'class="form-control input-tip" id="slshipping"'); ?>
+										<?php echo form_input('shipping', $inv->shipping?$inv->shipping:($inv->shipping_percent?$inv->shipping_percent.'%':''), 'class="form-control input-tip" id="slshipping"'); ?>
 
 									</div>
 								</div>
