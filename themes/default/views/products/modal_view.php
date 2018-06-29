@@ -231,10 +231,11 @@
                                         <?php
 										foreach($warehouses as $warehouse){
 											if(!empty($warehouse->quantity)){
+
 											if ($Owner || $Admin) {
-												echo $this->erp->convert_unit_2_string_by_unit($product->id, $warehouse->quantity,$warehouse->name);
+												echo $this->erp->convert_unit_2_string_by_unit_by_warehouse($product->id, $warehouse->quantity,$warehouse->name);
 											} else {
-												echo $this->erp->convert_unit_2_string_by_unit($product_user->id, $warehouse->quantity,$warehouse->name);
+												echo $this->erp->convert_unit_2_string_by_unit_by_warehouse($product_user->id, $warehouse->quantity,$warehouse->name);
 											}
 											}
 											

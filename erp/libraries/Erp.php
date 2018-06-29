@@ -1136,7 +1136,141 @@ class Erp
 		return implode ("$sep", array_filter ($_string));
 	}
 	
-	function convert_unit_2_string_by_unit ($_item_code = NULL, $_qty = NULL,$wh_name=NULL)
+	function convert_unit_2_string_by_unit ($_item_code = NULL, $_qty = NULL)
+	{
+		# $_is_mulit_unit = $_SESSION["multi_unit"];
+		$_is_mulit_unit = 1;
+
+		if ($_is_mulit_unit == 0)
+		{
+			return $qty;
+
+			exit ();
+		}
+
+		/*if ($_qty < 0)
+		{
+			$_if_under_0 = "-";
+			$_qty = abs ($_qty);
+		}*/
+
+		if ($_qty == 0) $_qty = "zero";
+
+		if ($_item_code == "" || $_qty === "")
+		{
+			//exit ("Warning! cannot call convert_unit_2_string($_item_code, $_qty) function.. missing argument, Error: bv00100");
+		}
+		else
+		{
+			if ($_qty == "zero") $_qty = 0;
+
+
+			$_item_code = trim ($_item_code);
+
+			$_units = array ();
+
+			$_select_all_units = $this->site->getUnitUOM($_item_code);
+			
+			
+			$_max_unit = count($_select_all_units);
+
+			$_i = 0;
+
+			foreach ($_select_all_units as $_get_unit)
+			{
+				$_unit_description = $_get_unit->name;
+				$_unit_qty         = $_get_unit->qty_unit;
+				$_cost	           =  ($_get_unit->qty_unit * $_get_unit->pcost );
+				$_price			   = $_get_unit->price;
+
+				/*
+
+					Syntax:
+
+					A							B								C							D
+					10							5								1							568
+					D / A = AX					XA / B = BX						XB / C = CX
+					D - (AX * A) = XA			XA - (BX * B) = XB				XB - (CX * C) = XC
+
+					568 / 10 = 56 (8)			8 / 5 = 1 (4)					4 / 1 = 4 (0)
+					568 - (56 * 10) = 8			8 - (1 * 5) = 4					4 - (4 * 1) = 0
+
+																											7834663
+					7834663 / 50 = 156693
+					7834663 - (156693 * 50) = 13
+
+					13 / 10 = 1
+					13 - (10 * 1) = 3
+
+					3
+
+
+
+					10000 g = 10 kg
+					- unit = Ton = 1 000 000 g
+
+					- 10 000 / 1 000 000
+
+					if 10 000 < 1 000 000
+
+
+				*/
+
+                if (!$this->Owner && !$this->Admin) {
+                    $gp = $this->site->checkPermissions();
+                    $this->GP = $gp[0];
+                    $GP = $gp[0];
+                } else {
+                    $GP = NULL;
+                }
+
+
+                //if ($_qty <= 0) break;
+
+				if ((abs($_qty) < $_unit_qty) || $_i == $_max_unit)
+				{
+					
+					if (abs($_qty) < $_unit_qty) continue; 
+
+					$_units[] = "$_qty <span style='color: #178228;'>$_unit_description x</span>";
+
+					# break;
+				}
+				else
+				{
+					# D / A = AX
+					
+					$_qtyx = (int) ($_qty / $_unit_qty);
+					
+                    $_units[] = "<tr>
+                                    <td>$_unit_description</td>
+                                    <td >" . $this->formatQuantity($_qtyx) . "</td>"
+                        . ($this->Owner || $this->Admin || $GP['products-cost'] ? "
+                                    <td>" . $this->formatMoney($_cost) . "</td>" : "")
+                        . ($this->Owner || $this->Admin || $GP['products-price'] ? "
+                                    <td>" . $this->formatMoney($_price) . "</td>" : "") . "</tr>";
+
+					# D - (AX * A) = XA
+					$_xqty = $_qty - ($_qtyx * $_unit_qty);
+
+					#
+					$_qty = $_xqty;
+				}
+			}
+
+			$_string_unit = $this->array_2_string ("", $_units);
+
+            /*if ($_qty < 0) {
+                return "$_if_under_0";
+            }*/
+			return "$_string_unit";
+		}
+
+		# how to use:
+		# echo convert_unit_2_string ("CAT4TST-00001", 7834663);
+	}
+	
+	function convert_unit_2_string_by_unit_by_warehouse ($_item_code = NULL, $_qty = NULL,$wh_name=NULL)
 	{
 		# $_is_mulit_unit = $_SESSION["multi_unit"];
 		$_is_mulit_unit = 1;
