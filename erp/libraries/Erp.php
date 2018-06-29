@@ -1136,7 +1136,7 @@ class Erp
 		return implode ("$sep", array_filter ($_string));
 	}
 	
-	function convert_unit_2_string_by_unit ($_item_code = NULL, $_qty = NULL)
+	function convert_unit_2_string_by_unit ($_item_code = NULL, $_qty = NULL,$wh_name=NULL)
 	{
 		# $_is_mulit_unit = $_SESSION["multi_unit"];
 		$_is_mulit_unit = 1;
@@ -1242,7 +1242,7 @@ class Erp
 					
 					$_qtyx = (int) ($_qty / $_unit_qty);
 					
-                    $_units[] = "<tr>
+                    $_units[] = "<tr><td>".$wh_name."</td>
                                     <td>$_unit_description</td>
                                     <td >" . $this->formatQuantity($_qtyx) . "</td>"
                         . ($this->Owner || $this->Admin || $GP['products-cost'] ? "

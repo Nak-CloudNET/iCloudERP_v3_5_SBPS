@@ -229,16 +229,17 @@
 										<tbody>
 
                                         <?php
-                                        foreach ($options as $option) {
-                                            if ($option->wh_qty != 0) {
-                                                echo '<tr><td>' . $option->wh_name . '</td><td>' . $option->name . '</td><td class="text-center">' . $this->erp->formatQuantity($option->wh_qty) . '</td>';
-                                                if ($Owner || $Admin && (!$Customer || $this->session->userdata('show_cost'))) {
-                                                    echo '<td class="text-right">' . $this->erp->formatMoney($option->cost) . '</td><td class="text-right">' . $this->erp->formatMoney($option->price) . '</td>';
-                                                }
-                                                echo '</tr>';
-                                            }
-
-                                        }
+										foreach($warehouses as $warehouse){
+											if(!empty($warehouse->quantity)){
+											if ($Owner || $Admin) {
+												echo $this->erp->convert_unit_2_string_by_unit($product->id, $warehouse->quantity,$warehouse->name);
+											} else {
+												echo $this->erp->convert_unit_2_string_by_unit($product_user->id, $warehouse->quantity,$warehouse->name);
+											}
+											}
+											
+										}
+											
                                         ?>
 
 										</tbody>
