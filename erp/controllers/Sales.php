@@ -11869,8 +11869,10 @@ AND "'.$end_date.' 23:59:00"';
         $customer = $this->site->getCompanyByID($customer_id);
         $customer_group = $this->site->getCustomerGroupByID($customer->customer_group_id);
 		$user_setting = $this->site->getUserSetting($this->session->userdata('user_id'));
-        $rows = $this->sales_model->getProductNumber($sr, $warehouse_id, $user_setting->sales_standard, $user_setting->sales_combo, $user_setting->sales_digital, $user_setting->sales_service, $user_setting->sales_category, $category_id);
-		$expiry_status = 0;
+		//Old $rows wrong qoh//
+        //$rows = $this->sales_model->getProductNumber($sr, $warehouse_id, $user_setting->sales_standard, $user_setting->sales_combo, $user_setting->sales_digital, $user_setting->sales_service, $user_setting->sales_category, $category_id);
+        $rows = $this->sales_model->getProductNames($sr, $warehouse_id, $user_setting->sales_standard, $user_setting->sales_combo, $user_setting->sales_digital, $user_setting->sales_service, $user_setting->sales_category, $category_id);
+        $expiry_status = 0;
 		if($this->site->get_setting()->product_expiry == 1){
 			$expiry_status = 1;
 		}
