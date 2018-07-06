@@ -229,7 +229,7 @@
                                                             echo "USD";
                                                         echo '</td>';
                                                         echo '<td style="border:1px solid #CCC;width:400px;height:30px;">';
-                                                            echo $item['price'];
+                                                            echo $this->erp->formatMoney($item['price']);
                                                         echo '</td>';
                                                     echo '</tr>';
                                                     echo '<tr>';

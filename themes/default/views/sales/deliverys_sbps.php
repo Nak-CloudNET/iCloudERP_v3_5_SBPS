@@ -110,7 +110,6 @@
                     <th><?= lang("UOM"); ?></th> 
                     <th><?= lang("Packing"); ?></th> 
                     <th><?= lang("QTY_Unit"); ?></th>
-					<th><?= lang("Expiry_Date"); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -139,12 +138,6 @@
 					<?php } ?>
 					
 					<td class="text-center"><?= round($row->qty);?></td>
-					<?php if ($row->expiry) { ?>
-					<td class="text-center"><?= $this->erp->hrsd($row->expiry); ?></td>
-					<?php } ?>
-					<?php if ($row->sale_expiry) { ?>
-					<td class="text-center"><?= $this->erp->hrsd($row->sale_expiry); ?></td>
-					<?php } ?>
 				</tr>
 			<?php
 				$no++;
@@ -159,7 +152,6 @@
 						echo
 							'<tr>
 								<td height="34px" class="text-center">'.$no.'</td>
-								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>

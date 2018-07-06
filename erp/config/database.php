@@ -59,10 +59,9 @@
     
     $active_group = 'default';
     $query_builder = TRUE;
-
     $db['default'] = array(
         'dsn'	=> '',
-        'hostname' => 'localhost',
+        'hostname' => '192.168.1.16',
         'username' => 'root',
         'password' => '',
         'database' => 'iclouderp_v3_5_kokae',
