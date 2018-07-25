@@ -1976,7 +1976,7 @@ function loadItems() {
                 delivery_id = item.row.delivery_id ? item.row.delivery_id : 0,
 				digital_id 			= item.row.digital_id?item.row.digital_id:0;
 				var unit_price 		= parseFloat(item.row.real_unit_price);
-				var real_unit_price = parseFloat(item.row.real_unit_price);
+				var real_unit_price = item.row.real_unit_price;
 				var exchange_rate 	= $("#exchange_rate").val();
 				var is_edit 		= $("#is_edit").val() ? $("#is_edit").val() : 0;
 				var default_price 	= item_price;
