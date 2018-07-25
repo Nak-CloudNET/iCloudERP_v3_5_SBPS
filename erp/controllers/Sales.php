@@ -3993,8 +3993,8 @@ AND "'.$end_date.' 23:59:00"';
 				$item_quantity 	= (isset($_POST['received'][$r])? $_POST['received'][$r]:$_POST['quantity'][$r]);
 				$real_item_quantity = $item_quantity;
 				
-                $real_unit_price = $this->erp->formatDecimal($_POST['real_unit_price'][$r]);
-                $unit_price = $this->erp->formatDecimal($_POST['unit_price'][$r]);
+                $real_unit_price = $_POST['real_unit_price'][$r];
+                $unit_price = $_POST['unit_price'][$r];
 				$net_price = $this->erp->formatDecimal($_POST['net_price'][$r]);
                 
 				$item_unit_quantity = $_POST['quantity'][$r];
@@ -4109,7 +4109,7 @@ AND "'.$end_date.' 23:59:00"';
                         'product_type' 		=> $item_type,
                         'option_id' 		=> $item_option,
                         'net_unit_price' 	=> $item_net_price,
-                        'unit_price' 		=> $this->erp->formatDecimal($unitPrice),
+                        'unit_price' 		=> $unitPrice,
 						'quantity' 			=> $item_quantity,
 						'quantity_balance' 	=> $quantity_balance,
                         'warehouse_id' 		=> $warehouse_id,
@@ -4121,7 +4121,7 @@ AND "'.$end_date.' 23:59:00"';
                         'tax' 				=> $tax,
                         'discount' 			=> $item_discount,
                         'item_discount' 	=> $pr_item_discount,
-                        'subtotal' 			=> $this->erp->formatDecimal($subtotal),
+                        'subtotal' 			=> $subtotal,
                         'serial_no' 		=> $item_serial,
                         'real_unit_price' 	=> $real_unit_price,
 						'product_noted' 	=> $item_note,
