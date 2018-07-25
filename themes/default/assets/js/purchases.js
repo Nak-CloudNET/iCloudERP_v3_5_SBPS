@@ -1230,13 +1230,13 @@ function loadItems() {
 
             /* Unit Cost */
 			if(owner || admin || purchase_cost) {
-				tr_html += '<td class="text-right"><input class="form-control text-center sp" name="serial[]" type="hidden" value="' + serial_no + '"><input class="form-control number_only text-center rcost" name="net_cost[]" type="text" id="cost_' + row_no + '" value="' + formatMoney(net_unit_cost) + '"><input class="rucost" name="unit_cost[]" type="hidden" value="' + net_unit_cost + '"><input class="realucost" name="real_unit_cost[]" type="hidden" value="' + net_unit_cost + '"><input class="realcost" type="hidden" value="' + item.row.real_cost + '"></td>';
+				tr_html += '<td class="text-right"><input class="form-control text-center sp" name="serial[]" type="hidden" value="' + serial_no + '"><input class="form-control number_only text-center rcost" name="net_cost[]" type="text" id="cost_' + row_no + '" value="' + net_unit_cost + '"><input class="rucost" name="unit_cost[]" type="hidden" value="' + net_unit_cost + '"><input class="realucost" name="real_unit_cost[]" type="hidden" value="' + net_unit_cost + '"><input class="realcost" type="hidden" value="' + item.row.real_cost + '"></td>';
 			} else {
 				tr_html += '<input class="rucost" name="unit_cost[]" type="hidden" value="' + net_unit_cost + '"><input class="realucost" name="real_unit_cost[]" type="hidden" value="' + net_unit_cost + '"><input class="realcost" type="hidden" value="' + item.row.real_cost + '">';
 			}
             /* Unit Cost when user don't have permission*/
             if(owner==null && admin==null && purchase_cost==null){
-                tr_html += '<td class="text-right" style="display: none;"><input class="form-control text-center sp" name="serial[]" type="hidden" value="' + serial_no + '"><input class="form-control number_only text-center rcost" name="net_cost[]" type="text" id="cost_' + row_no + '" value="' + formatMoney(net_unit_cost) + '"><input class="rucost" name="unit_cost[]" type="hidden" value="' + net_unit_cost + '"><input class="realucost" name="real_unit_cost[]" type="hidden" value="' + net_unit_cost + '"><input class="realcost" type="hidden" value="' + item.row.real_cost + '"></td>';
+                tr_html += '<td class="text-right" style="display: none;"><input class="form-control text-center sp" name="serial[]" type="hidden" value="' + serial_no + '"><input class="form-control number_only text-center rcost" name="net_cost[]" type="text" id="cost_' + row_no + '" value="' + net_unit_cost + '"><input class="rucost" name="unit_cost[]" type="hidden" value="' + net_unit_cost + '"><input class="realucost" name="real_unit_cost[]" type="hidden" value="' + net_unit_cost + '"><input class="realcost" type="hidden" value="' + item.row.real_cost + '"></td>';
 			}
 
 			if(__getItem('purchase_order_id')){
