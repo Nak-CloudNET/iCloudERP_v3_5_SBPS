@@ -1836,10 +1836,9 @@ if (slwarehouse = __getItem('slwarehouse')) {
  			bootbox.alert(lang.unexpected_value);
  			return;
  		}
- 		var new_price = parseFloat($(this).val()),
+ 		var new_price = $(this).val(),
  		item_id = row.attr('data-item-id');
  		slitems[item_id].row.real_unit_price = new_price;
-
         /*if(slitems[item_id].group_prices){
            slitems[item_id].group_prices[0].price = price;
        }*/
