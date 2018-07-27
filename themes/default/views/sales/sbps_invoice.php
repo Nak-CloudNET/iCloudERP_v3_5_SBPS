@@ -125,7 +125,7 @@
 						<td style="width: 80px; text-align:center; vertical-align:middle;">
                             <?= number_format($row->quantity); ?>
 						</td>
-                        <td style="text-align:center; width:90px;vertical-align:middle;"><?= $this->erp->formatMoney($row->real_unit_price); ?></td>
+                        <td style="text-align:center; width:90px;vertical-align:middle;">$<?= floatval($row->real_unit_price); ?></td>
                         <td style="text-align:right; vertical-align:middle; width:110px;"><?= $this->erp->formatMoney($row->subtotal); ?></td>
 					</tr>
 					<?php

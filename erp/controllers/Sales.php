@@ -4135,17 +4135,7 @@ AND "'.$end_date.' 23:59:00"';
 					$total 		+= $subtotal;
                 }
             }
-            if(strpos($shipping,"%")!=false){
-                $shipping_percent=explode("%",$shipping);
-                $shipping_money=null;
-                $shipping=$shipping_percent[0]*$total/100;
-                //$shipping=$ship_percent[0]*$total/100;
-            }else{
-                $shipping_money=$shipping;
-                $shipping=$shipping_money;
-                $shipping_percent=null;
-            }
-            //$this->erp->print_arrays($shipping,'Percent',$shipping_percent);
+
             if (empty($products)) {
                 $this->form_validation->set_rules('product', lang("order_items"), 'required');
             } else {
@@ -4165,7 +4155,18 @@ AND "'.$end_date.' 23:59:00"';
                 $order_discount_id = null;
             }
             $total_discount = $this->erp->formatDecimal($order_discount + $product_discount);
-            
+
+            if(strpos($shipping,"%")!=false){
+                $shipping_percent=explode("%",$shipping);
+                $shipping_money=null;
+                $shipping=$shipping_percent[0]*($total-$order_discount)/100;
+                //$shipping=$ship_percent[0]*$total/100;
+            }else{
+                $shipping_money=$shipping;
+                $shipping=$shipping_money;
+                $shipping_percent=null;
+            }
+
             if ($this->Settings->tax2) {
                 $order_tax_id = $this->input->post('order_tax');
                 if ($order_tax_details = $this->site->getTaxRateByID($order_tax_id)) {
@@ -5880,9 +5881,9 @@ AND "'.$end_date.' 23:59:00"';
                 //$option_details = $this->sales_model->getProductOptionByID($item_option);
                 $expire_date_id 	= isset($_POST['expdate'][$r]) && $_POST['expdate'][$r] != 'false' ? $_POST['expdate'][$r] : null;
 				$expdate 			= $this->sales_model->getPurchaseItemExDateByID($expire_date_id)->expiry;
-				$real_unit_price 	= $this->erp->formatDecimal($_POST['real_unit_price'][$r]);
-                $unit_price 		= $this->erp->formatDecimal($_POST['unit_price'][$r]);
-				$net_price 			= $this->erp->formatDecimal($_POST['net_price'][$r]);
+				$real_unit_price 	= $_POST['real_unit_price'][$r];
+                $unit_price 		= $_POST['unit_price'][$r];
+				$net_price 			= $_POST['net_price'][$r];
                 $item_quantity 		= $_POST['quantity'][$r];
 				$slaeid 			= $_POST['slaeid'][$r];
 				$item_unit_quantity = $_POST['quantity'][$r];
@@ -6009,16 +6010,7 @@ AND "'.$end_date.' 23:59:00"';
                     $total += $this->erp->formatDecimal($subtotal, 4);
                 }
             }
-            if(strpos($shipping,"%")!=false){
-                $shipping_percent=explode("%",$shipping);
-                $shipping_money=null;
-                $shipping=$shipping_percent[0]*$total/100;
-                //$shipping=$ship_percent[0]*$total/100;
-            }else{
-                $shipping_money=$shipping;
-                $shipping=$shipping_money;
-                $shipping_percent=null;
-            }
+
             if (empty($products)) {
                 $this->form_validation->set_rules('product', lang("order_items"), 'required');
             } else {
@@ -6037,6 +6029,17 @@ AND "'.$end_date.' 23:59:00"';
                 $order_discount_id 		= null;
             }
             $total_discount 		= $this->erp->formatDecimal($order_discount + $product_discount);
+
+            if(strpos($shipping,"%")!=false){
+                $shipping_percent=explode("%",$shipping);
+                $shipping_money=null;
+                $shipping=$shipping_percent[0]*($total-$order_discount)/100;
+                //$shipping=$ship_percent[0]*$total/100;
+            }else{
+                $shipping_money=$shipping;
+                $shipping=$shipping_money;
+                $shipping_percent=null;
+            }
 
             if ($this->Settings->tax2) {
                 $order_tax_id = $this->input->post('order_tax');

@@ -2408,6 +2408,7 @@ class Products extends MY_Controller
                 $pr[] = array('id' => str_replace(".", "", microtime(true)), 'item_id' => $row->id, 'label' => $row->name . " (" . $row->code . ")", 'row' => $row, 'options' => $options);
 
             }
+
             $this->erp->send_json($pr);
         } else {
             $this->erp->send_json(array(array('id' => 0, 'label' => lang('item_no_cost'), 'value' => $term)));

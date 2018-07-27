@@ -855,14 +855,13 @@ $('#slshipping').focus(function () {
 	if(shippingvalue.indexOf("%")!==-1){
 		var ship=shippingvalue.split("%");
 		if (!isNaN(ship[0])) {
-			shipping=parseFloat(total*ship[0]/100);
+			shipping=parseFloat((total-order_discount)*ship[0]/100);
 		}else{
 			shipping=0;
 		}
 	}else{
 		shipping=shippingvalue;
 	}
-
 
 	__setItem('slshipping', shipping);
 	var gtotal = ((total + invoice_tax) - order_discount) - shipping;
@@ -2326,9 +2325,9 @@ function loadItems() {
 				tr_html += '<td class="text-right"><input class="form-control input-sm text-right rprice" name="net_price[]" type="hidden" id="price_' + row_no + '" value="' + real_unit_price + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + real_unit_price + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + real_unit_price + '"><span class="text-right sprice" id="sprice_' + row_no + '">' + real_unit_price + '</span></td>';
 			}else{
 				if (owner || admin || sale_price) {
-					tr_html += '<td class="text-right"><input class="form-control text-right rprice_t" name="net_price[]" type="text" id="price_' + row_no + '" value="' + real_unit_price + '"><input class="item_cost" name="item_cost[]" type="hidden" value="' + item_cost + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + unit_price + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + real_unit_price + '"> </td>';
+					tr_html += '<td class="text-right"><input class="form-control text-right rprice_t" name="net_price[]" type="text" id="price_' + row_no + '" value="' + parseFloat(real_unit_price) + '"><input class="item_cost" name="item_cost[]" type="hidden" value="' + item_cost + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + unit_price + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + real_unit_price + '"> </td>';
 				} else {
-					tr_html += '<input class="form-control text-right rprice_t" name="net_price[]" type="hidden" id="price_' + row_no + '" value="' + real_unit_price + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + unit_price + '"><input class="item_cost" name="item_cost[]" type="hidden" value="' + item_cost + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + real_unit_price + '">';
+					tr_html += '<input class="form-control text-right rprice_t" name="net_price[]" type="hidden" id="price_' + row_no + '" value="' + parseFloat(real_unit_price) + '"><input class="ruprice" name="unit_price[]" type="hidden" value="' + unit_price + '"><input class="item_cost" name="item_cost[]" type="hidden" value="' + item_cost + '"><input class="realuprice" name="real_unit_price[]" type="hidden" value="' + real_unit_price + '">';
 				}
 			}
 
@@ -2480,7 +2479,7 @@ function loadItems() {
 		if (site.settings.tax2 != 0) {
 			$('#ttax2').text(formatMoney(invoice_tax));
 		}
-		$('#tship').text(formatNumber(shipping,3));
+		$('#tship').text(formatMoney(shipping));
 		$('#gtotal').text(formatMoney(gtotal));
 		var pas = $('#slpayment_status').val();
 		if(pas == 'paid'){
