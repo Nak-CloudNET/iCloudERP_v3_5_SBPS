@@ -24,9 +24,8 @@
         __setItem('slinnote', '<?= str_replace(array("\r", "\n","'"), array("","","&#039"), $this->erp->decode_html($inv->staff_note)); ?>');
         __setItem('sldiscount', '<?= $inv->order_discount_id ?>');
         __setItem('sltax2', '<?= $inv->order_tax_id ?>');
-        __setItem('slshipping', '<?= $inv->shipping ?>');
+        __setItem('slshipping', '<?= $inv->shipping_percent ?>');
         __setItem('sltotal', '<?= $inv->total ?>');
-        __setItem('slshipping_percent', '<?= $inv->shipping_percent ?>');
         __setItem('slitems', JSON.stringify(<?= $inv_items; ?>));
 		<?php /* if (isset($payment->paid_by)) { */ ?>
 		//__setItem('paid_by_1', '<?= $payment->paid_by ?>');
@@ -702,10 +701,10 @@
                             <?php if (($Owner || $Admin || $this->session->userdata('allow_discount')) || $inv->total_discount) { ?>
                             <td><?= lang('order_discount') ?> <span class="totals_val pull-right" id="tds">0.00</span></td>
                             <?php } ?>
+                            <td><?= lang('shipping') ?> <span class="totals_val pull-right" id="tship">0.00</span></td>
                             <?php if ($Settings->tax2) { ?>
                                 <td><?= lang('order_tax') ?> <span class="totals_val pull-right" id="ttax2">0.00</span></td>
                             <?php } ?>
-                            <td><?= lang('shipping') ?> <span class="totals_val pull-right" id="tship">0.00</span></td>
                             <td><?= lang('grand_total') ?> <span class="totals_val pull-right" id="gtotal">0.00</span></td>
                         </tr>
                     </table>
