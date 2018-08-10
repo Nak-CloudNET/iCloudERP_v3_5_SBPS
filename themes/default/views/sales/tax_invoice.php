@@ -186,7 +186,7 @@
                         </td>
                         <td style="text-align:right;"><?= $this->erp->formatMoney($inv->total + $inv->product_tax); ?></td>
                     </tr>
-                <?php } ?>
+                <?php } //$this->erp->print_arrays($inv); ?>
                 <?php if ($inv->order_discount != 0) {
                     echo '<tr class="tr"><td colspan="' . $col . '" style="text-align:right;">បញ្ចុះតម្លៃ ' . lang("discount") . '</td><td style="text-align:right;">' . $this->erp->formatMoney($inv->order_discount) . '</td></tr>';
                 }
@@ -195,10 +195,11 @@
                 <?php if ($inv->shipping != 0 || $inv->shipping_percent != 0) {
                     echo '<tr class="tr"><td colspan="' . $col . '" style="text-align:right;">ដឹកជញ្ចូន ' . lang("Delivery") . '</td><td style="text-align:right;">';
                     if($inv->shipping!=0){
-                        echo $this->erp->formatMoney($inv->shipping);
+
                     }
                     if($inv->shipping_percent!=0){
-                        echo '<small>('.$inv->shipping_percent.'%)</small>'.$this->erp->formatMoney($inv->shipping_percent*$inv->total/100);
+                        echo '<small>('.$inv->shipping_percent.'%)</small>'.$this->erp->formatMoney($inv->shipping);
+                        //$this->erp->formatMoney($inv->shipping_percent*$inv->total/100)
                     }
                     echo '</td></tr>';
                 }
