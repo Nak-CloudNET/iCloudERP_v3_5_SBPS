@@ -5942,6 +5942,7 @@ AND "'.$end_date.' 23:59:00"';
             }
             $total_discount 		= $this->erp->formatDecimal($order_discount + $product_discount);
 
+            $shipping_id = $shipping;
             if (strpos($shipping, "%")!=false) {
                 $shipping_percent=explode("%", $shipping);
                 $shipping_money=null;
@@ -5959,7 +5960,7 @@ AND "'.$end_date.' 23:59:00"';
                     if ($order_tax_details->type == 2) {
                         $order_tax = $this->erp->formatDecimal($order_tax_details->rate);
                     } elseif ($order_tax_details->type == 1) {
-                        $order_tax = $this->erp->formatDecimal(((($total + $shipping - $order_discount) * $order_tax_details->rate) / 100), 4);
+                        $order_tax = $this->erp->formatDecimal(((($total - $shipping - $order_discount) * $order_tax_details->rate) / 100), 4);
                     }
                 }
             } else {
@@ -5990,8 +5991,8 @@ AND "'.$end_date.' 23:59:00"';
                 'order_tax_id' 			=> $order_tax_id,
                 'order_tax' 			=> $order_tax,
                 'total_tax' 			=> $total_tax,
-                'shipping' 				=> $this->erp->formatDecimal($shipping_money),
-                'shipping_percent' 		=> $this->erp->formatDecimal($shipping_percent[0]),
+                'shipping' 				=> $this->erp->formatDecimal($shipping),
+                'shipping_percent' 		=> $shipping_id,
                 'grand_total' 			=> $grand_total,
                 'total_items' 			=> $total_items,
                 'sale_status' 			=> $sale_status,
