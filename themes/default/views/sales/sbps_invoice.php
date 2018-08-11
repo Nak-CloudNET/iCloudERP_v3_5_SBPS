@@ -202,6 +202,8 @@
 				}
 
 				?>
+
+
                 <?php
                 $dis_p=0;
                 if ($inv->shipping != 0 || $inv->shipping_percent != 0) {
