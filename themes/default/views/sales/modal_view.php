@@ -280,24 +280,24 @@
                         echo '<tr><td></td><td colspan="' . $col . '" style="text-align:right; padding-right:10px;;">' . lang("order_discount") . ' (' . $default_currency->code . ')</td><td style="text-align:right; padding-right:10px;">' . $this->erp->formatMoney($inv->order_discount) . '</td></tr>';
                     }
                     ?>
-                    <?php if ($Settings->tax2 && $inv->order_tax != 0) {
-                        echo '<tr><td></td><td colspan="' . $col . '" style="text-align:right; padding-right:10px;">' . lang("order_tax") . ' (' . $default_currency->code . ')</td><td style="text-align:right; padding-right:10px;">' . $this->erp->formatMoney($inv->order_tax) . '</td></tr>';
-                    }
-                    ?>
                     <?php
                     $dis_p=0;
                     if ($inv->shipping != 0 || $inv->shipping_percent!=0) {
                         echo '<tr><td></td><td colspan="' . $col . '" style="text-align:right; padding-right:10px;">' . lang("shipping") . ' (' . $default_currency->code . ')</td><td style="text-align:right; padding-right:10px;">';
-                           if($inv->shipping>0)
-                           {
-                               echo $this->erp->formatMoney($dis_p=$inv->shipping);
-                           }
-                           if($inv->shipping_percent>0)
-                           {
+                        if($inv->shipping_percent>0)
+                        {
 
-                               echo '<small>('.$inv->shipping_percent.'%)</small> '.$this->erp->formatMoney($dis_p=$inv->shipping_percent*$inv->total/100);
-                           }
+                            echo '<small>('.$inv->shipping_percent.')</small> ';
+                        }
+                        if($inv->shipping>0)
+                        {
+                            echo $this->erp->formatMoney($dis_p=$inv->shipping);
+                        }
                         echo '</td></tr>';
+                    }
+                    ?>
+                    <?php if ($Settings->tax2 && $inv->order_tax != 0) {
+                        echo '<tr><td></td><td colspan="' . $col . '" style="text-align:right; padding-right:10px;">' . lang("order_tax") . ' (' . $default_currency->code . ')</td><td style="text-align:right; padding-right:10px;">' . $this->erp->formatMoney($inv->order_tax) . '</td></tr>';
                     }
                     ?>
 					
@@ -307,7 +307,7 @@
                             style="text-align:right; font-weight:bold;"><?= lang("total_amount"); ?>
                             (<?= $default_currency->code; ?>)
                         </td>
-                        <td style="text-align:right; padding-right:10px; font-weight:bold;"><?= $this->erp->formatMoney(($inv->total + $inv->product_tax)-$inv->order_discount+$dis_p+$inv->order_tax); ?></td>
+                        <td style="text-align:right; padding-right:10px; font-weight:bold;"><?= $this->erp->formatMoney($inv->grand_total); ?></td>
                     </tr>
 					<?php if ($inv->deposit != 0) {?>
 					<tr>
