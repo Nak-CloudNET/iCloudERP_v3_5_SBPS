@@ -252,6 +252,7 @@
                     } else {
                         $tcol = $col;
                     }
+
                     ?>
                     <?php if ($inv->grand_total != $inv->total) { ?>
                         <tr>

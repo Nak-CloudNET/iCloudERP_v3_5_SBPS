@@ -157,6 +157,7 @@
                     }
                 }
                 ?>
+
                 </tbody>
                 <tfoot style="font-size: 13px;">
                 <?php
