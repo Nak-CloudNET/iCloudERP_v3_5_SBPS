@@ -303,7 +303,7 @@
                             style="text-align:right; font-weight:bold;"><?= lang("total_amount"); ?>
                             (<?= $default_currency->code; ?>)
                         </td>
-                        <td style="text-align:right; padding-right:10px; font-weight:bold;"><?= $this->erp->formatMoney($inv->grand_total); ?></td>
+                        <td style="text-align:right; padding-right:10px; font-weight:bold;"><?= $this->erp->formatMoney(($inv->total + $inv->product_tax)-$inv->order_discount+$inv->shipping+$inv->order_tax); ?></td>
                     </tr>
 					<?php if ($inv->deposit != 0) {?>
 					<tr>

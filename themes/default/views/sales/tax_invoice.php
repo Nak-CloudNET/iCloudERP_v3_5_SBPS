@@ -78,7 +78,7 @@
             </div>
         </div>
     </div>
-
+    <?php //$this->erp->print_arrays($rows); ?>
     <div class="row">
         <div class="col-xs-12" style="margin-top:10px">
             <table id="SLData" class="table table-bordered table-hover table-striped" style="width: 100%;">
@@ -124,6 +124,7 @@
                     <?php
                     $r++;
                     $erow++;
+                    $su_total+=$row->subtotal;
                 endforeach;
                 ?>
                 <?php
@@ -178,13 +179,14 @@
                 } else {
                     $tcol = $col;
                 }
+
                 ?>
                 <?php if ($inv->grand_total != $inv->total) { ?>
                     <tr class="tr">
                         <td colspan="<?= $tcol + 2; ?>" style="text-align:right;">សរុប <?= lang("sub_total"); ?>
 
                         </td>
-                        <td style="text-align:right;"><?= $this->erp->formatMoney($inv->total + $inv->product_tax); ?></td>
+                        <td style="text-align:right;"><?= $this->erp->formatMoney($su_total + $inv->product_tax); ?></td>
                     </tr>
                 <?php } //$this->erp->print_arrays($inv); ?>
                 <?php if ($inv->order_discount != 0) {
@@ -194,11 +196,9 @@
                 ?>
                 <?php if ($inv->shipping != 0 || $inv->shipping_percent != 0) {
                     echo '<tr class="tr"><td colspan="' . $col . '" style="text-align:right;">ដឹកជញ្ចូន ' . lang("Delivery") . '</td><td style="text-align:right;">';
-                    if($inv->shipping!=0){
 
-                    }
-                    if($inv->shipping_percent!=0){
-                        echo '<small>('.$inv->shipping_percent.'%)</small>'.$this->erp->formatMoney($inv->shipping);
+                    if($inv->shipping_percent!=0 || $inv->shipping!=0){
+                        echo $this->erp->formatMoney($inv->shipping);
                         //$this->erp->formatMoney($inv->shipping_percent*$inv->total/100)
                     }
                     echo '</td></tr>';
@@ -213,7 +213,7 @@
                         style="text-align:right;">សរុបរួម <?= lang("Grand Total"); ?>
 
                     </td>
-                    <td style="text-align:right;font-weight:bold;"><?= $this->erp->formatMoney($inv->grand_total); ?></td>
+                    <td style="text-align:right;font-weight:bold;"><?= $this->erp->formatMoney(($su_total + $inv->product_tax)-$inv->order_discount+$inv->shipping+$inv->order_tax); ?></td>
                 </tr>
                 </tfoot>
             </table>
