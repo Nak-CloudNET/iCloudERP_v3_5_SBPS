@@ -202,12 +202,16 @@
 				}
 
 				?>
-                <?php if ($inv->shipping != 0 || $inv->shipping_percent != 0) {
+                <?php
+                $dis_p=0;
+                if ($inv->shipping != 0 || $inv->shipping_percent != 0) {
                     echo '<tr class="tr"><td colspan="' . $col . '" style="text-align:right;">ដឹកជញ្ចូន ' . lang("Delivery") . '</td><td style="text-align:right;">';
 
-                    if($inv->shipping_percent!=0 || $inv->shipping!=0){
-                        echo $this->erp->formatMoney($inv->shipping);
-                        //$this->erp->formatMoney($inv->shipping_percent*$inv->total/100)
+                    if($inv->shipping>0){
+                        echo $this->erp->formatMoney($dis_p=$inv->shipping);
+                    }
+                    if($inv->shipping_percent>0){
+                        echo '<small>('.$inv->shipping_percent.'%)</small>'.$this->erp->formatMoney($dis_p=$inv->shipping_percent*$inv->total/100);
                     }
                     echo '</td></tr>';
                 }
@@ -221,7 +225,7 @@
 						style="text-align:right;">សរុបរួម <?= lang("Grand Total"); ?>
 			
 					</td>
-                    <td style="text-align:right;font-weight:bold;"><?= $this->erp->formatMoney(($inv->total + $inv->product_tax)-$inv->order_discount+$inv->shipping+$inv->order_tax); ?></td>
+                    <td style="text-align:right;font-weight:bold;"><?= $this->erp->formatMoney(($inv->total + $inv->product_tax)-$inv->order_discount+$dis_p+$inv->order_tax); ?></td>
 				</tr>
 				</tfoot>
 			</table>
