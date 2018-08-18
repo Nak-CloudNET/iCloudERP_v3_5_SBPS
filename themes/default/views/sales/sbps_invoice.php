@@ -68,19 +68,19 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12" style="margin-top:10px">
-			<div class="col-xs-6" style="padding-left-5px;">
-				<span>អតិថជន / <?=lang('customer')?> : <?= $customer->names; ?></span><br>
+		<div style="margin-top:10px">
+			<div class="col-xs-8" style="padding-left-5px;">
+				<span>អតិថជន / <?=lang('customer')?> : <?= $customer->name; ?></span><br>
 				<span>Company Name /Customer : <?= $customer->company ; ?></span><br>
 				<span>Tell : <?= $customer->phone ; ?></span><br>
 				<span><?= $customer->address ; ?></span><br>
 				<span class="text-center">VAT TIN : <?= $customer->vat_no ; ?></span><br>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-xs-4">
 				<p>លេខរៀងវិក្កយបត្រ៖ <?=lang('invoice')?> <?= $inv->reference_no;; ?></p>
 				<p>កាលបរិច្ឆេទ <?=lang('date')?> <?= $this->erp->hrld($inv->date); ?></p>
 				<p>លេខបញ្ឆាទិញ ៖  PO Number : <?= $inv->po ; ?></p>
-				<p>គិតទៅ៖ &nbsp;&nbsp;&nbsp;&nbsp; Bill TO: <?= $inv->bill_to ; ?></p>
+				<p>ដឹកទៅ៖ &nbsp;&nbsp;&nbsp;&nbsp; Ship TO: <?= $inv->bill_to ; ?></p>
 				
 			</div>
 		</div>
@@ -125,7 +125,7 @@
 						<td style="width: 80px; text-align:center; vertical-align:middle;">
                             <?= number_format($row->quantity); ?>
 						</td>
-                        <td style="text-align:center; width:90px;vertical-align:middle;">$<?= floatval($row->real_unit_price); ?></td>
+                        <td style="text-align:center; width:90px;vertical-align:middle;"><?= $this->erp->formatMoney(floatval($row->real_unit_price)); ?></td>
                         <td style="text-align:right; vertical-align:middle; width:110px;"><?= $this->erp->formatMoney($row->subtotal); ?></td>
 					</tr>
 					<?php

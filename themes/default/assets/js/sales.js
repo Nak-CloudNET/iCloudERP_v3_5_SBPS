@@ -2319,7 +2319,7 @@ function loadItems() {
         }
       }
 
-      item_price = item_tax_method == 0 ? formatDecimal(unit_price - pr_tax_val, 4) : formatDecimal(unit_price, 4);
+      item_price = item_tax_method == 0 ? formatDecimal(unit_price - pr_tax_val, 4) : item.row.real_unit_price, 4;
       //iprice = item_tax_method == 0 ? formatDecimal(real_unit_price-pr_tax_val, 4) : formatDecimal(real_unit_price, 4);
 
       //alert(JSON.stringify(item.options));

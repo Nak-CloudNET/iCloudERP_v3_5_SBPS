@@ -403,7 +403,7 @@ class Site extends CI_Model
 							companies.deposit_amount,
 							companies.identify_date,
 							COALESCE(code, '') AS code, 
-							company, company_kh, companies.name ,name_kh, email, phone, 
+							company, company_kh, companies.name , name_kh, email, phone, 
 							group_areas.areas_group, 
 							customer_group_name, customer_group_id, vat_no,
 							price_group_id,erp_companies.address, erp_companies.address_1, erp_companies.address_2, erp_companies.address_3, erp_companies.address_4, erp_companies.address_5, erp_companies.city, erp_companies.postal_code,erp_companies.street,erp_companies.village,erp_companies.sangkat,erp_companies.district, erp_companies.state, erp_companies.country,

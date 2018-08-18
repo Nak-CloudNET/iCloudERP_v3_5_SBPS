@@ -284,8 +284,7 @@
                     $dis_p=0;
                     if ($inv->shipping != 0 || $inv->shipping_percent!=0) {
                         echo '<tr><td></td><td colspan="' . $col . '" style="text-align:right; padding-right:10px;">' . lang("shipping") . ' (' . $default_currency->code . ')</td><td style="text-align:right; padding-right:10px;">';
-                        if($inv->shipping_percent>0)
-                        {
+                        if(strpos($inv->shipping_percent, '%') !== false){
 
                             echo '<small>('.$inv->shipping_percent.')</small> ';
                         }
