@@ -144,7 +144,7 @@
                                 </tr>';
                         } else {
                             echo '<tr class="border">
-                                    <td height="34px" style="text-align: center; vertical-align: middle">' . $r . '</td>
+                                    <td height="34px" style="text-align: center; vertical-align: middle">&nbsp;</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
