@@ -139,7 +139,7 @@
                     for ($j = 1; $j <= $k; $j++) {
                         if ($discount != 0) {
                             echo '<tr class="border">
-                                    <td height="34px" style="text-align: center; vertical-align: middle">' . $r . '</td>
+                                    <td height="34px" style="text-align: center; vertical-align: middle"></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -150,7 +150,7 @@
                                 </tr>';
                         } else {
                             echo '<tr class="border">
-                                    <td height="34px" style="text-align: center; vertical-align: middle">' . $r . '</td>
+                                    <td height="34px" style="text-align: center; vertical-align: middle"></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
